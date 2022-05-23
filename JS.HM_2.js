@@ -7,12 +7,14 @@ for(let b = 2; a <= 10; a++ ) {
 
 // // 1*. Преобразовать 1 задачу в функцию, принимающую на вход степень, в которую будет возводиться число 2
 
-const exp = function(c) {
-for(let b = 2; c <= 10; c++ ) {
-    console.log(b ** c)
+const exp = function(num) {
+    let result = 1
+for(let i = 1; i <= num ; i++ ) {
+    result = result * 2
 }
+console.log(result)
 }
-exp(1)
+exp(12)
 
 // 2. Написать скрипт, который выведет 5 строк в консоль таким образом, чтобы в первой строчке выводилось :), во второй :):) и так далее
 // Пример в консоли:
@@ -23,20 +25,23 @@ exp(1)
 // :):):):):)
 
 let smile = ":)"
+let result = ''
 for(let count = 1; count <= 5; count++){
-    console.log(smile.repeat(count));
+    result+=smile
+    console.log(result);
 }
 
 // 2*. Преобразовать 2 задачу в функцию, принимающую на вход строку, которая и будет выводиться в консоль (как в условии смайлик), 
 // а также количество строк для вывода, e.g. function printSmile(stroka, numberOfRows)
 
-const concat = function print(stroka, numberOfRows) {
-let count = 0
-for(count; count <= numberOfRows; count++){
-    console.log(stroka.repeat(count));
+const concat = function printSmile(stroka, numberOfRows) {
+let result = ''
+for(let i = 1; i <= numberOfRows; i++){
+    result+=stroka
+    console.log(result);
 }
 }
-concat("1", 5)
+concat(1, 5)
 
 
 // 3**.  Написать функцию, которая принимает на вход слово. Задача функции посчитать и вывести в консоль, сколько в слове гласных, и сколько согласных букв.
@@ -63,13 +68,11 @@ word('Check-list')
 
 
 function isPalindrom(word) {
-    let lowRegStr = word.toLowerCase()
-    let reverseStr = lowRegStr.split('').reverse().join('')
-    if(reverseStr === lowRegStr) {
+    if(word.toLowerCase().split('').reverse().join('') === word.toLowerCase()) {
     console.log("palindrome")
     } 
     else console.log("not palindrome")
 }
 
-isPalindrom('Abba')
+isPalindrom('Abba abba')
 isPalindrom('abba')
